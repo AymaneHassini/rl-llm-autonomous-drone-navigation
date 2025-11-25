@@ -5,9 +5,7 @@ A **Hybrid Controller** blends the symbolic LLM plan with neural RL reflexes, wh
 
 ## Demonstration
 Watch the drone autonomously navigate a cluttered environment and react to a surprise dynamic obstacle:
-<div align="center">
-  <video src="media/spedup.mov" width="720" controls></video>
-</div>
+ [**Click here to watch the demonstration video**](media/spedup.mov)
 
 ## Architecture Summary
 
