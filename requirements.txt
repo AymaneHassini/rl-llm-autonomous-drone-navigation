@@ -1,0 +1,9 @@
+numpy
+pybullet
+gymnasium
+stable-baselines3
+shimmy
+torch
+google-generativeai
+opencv-python
+python-dotenv

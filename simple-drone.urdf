@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<robot name="simple_drone">
+
+  <!-- CENTRAL BODY (only real collision) -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.08"/>
+      </geometry>
+      <material name="body_blue">
+        <color rgba="0.0 0.3 0.9 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.08"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" iyy="0.01" izz="0.02"
+               ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- ========== ARMS + PROPS (VISUAL ONLY - no collision) ========== -->
+
+  <!-- Front-right arm -->
+  <link name="arm_fr">
+    <visual>
+      <origin xyz="0.18 0.18 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.18"/>
+      </geometry>
+      <material name="arm_grey">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="joint_arm_fr" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_fr"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Front-left arm -->
+  <link name="arm_fl">
+    <visual>
+      <origin xyz="-0.18 0.18 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.18"/>
+      </geometry>
+      <material name="arm_grey"/>
+    </visual>
+  </link>
+
+  <joint name="joint_arm_fl" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_fl"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back-right arm -->
+  <link name="arm_br">
+    <visual>
+      <origin xyz="0.18 -0.18 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.18"/>
+      </geometry>
+      <material name="arm_grey"/>
+    </visual>
+  </link>
+
+  <joint name="joint_arm_br" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_br"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back-left arm -->
+  <link name="arm_bl">
+    <visual>
+      <origin xyz="-0.18 -0.18 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.02" radius="0.18"/>
+      </geometry>
+      <material name="arm_grey"/>
+    </visual>
+  </link>
+
+  <joint name="joint_arm_bl" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_bl"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- PROPELLER DISKS (purely visual) -->
+
+  <!-- Front-right prop -->
+  <link name="prop_fr">
+    <visual>
+      <origin xyz="0.25 0.25 0.03" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.09"/>
+      </geometry>
+      <material name="prop_black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="joint_prop_fr" type="fixed">
+    <parent link="base_link"/>
+    <child link="prop_fr"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Front-left prop -->
+  <link name="prop_fl">
+    <visual>
+      <origin xyz="-0.25 0.25 0.03" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.09"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+  </link>
+  <joint name="joint_prop_fl" type="fixed">
+    <parent link="base_link"/>
+    <child link="prop_fl"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back-right prop -->
+  <link name="prop_br">
+    <visual>
+      <origin xyz="0.25 -0.25 0.03" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.09"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+  </link>
+  <joint name="joint_prop_br" type="fixed">
+    <parent link="base_link"/>
+    <child link="prop_br"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Back-left prop -->
+  <link name="prop_bl">
+    <visual>
+      <origin xyz="-0.25 -0.25 0.03" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.005" radius="0.09"/>
+      </geometry>
+      <material name="prop_black"/>
+    </visual>
+  </link>
+  <joint name="joint_prop_bl" type="fixed">
+    <parent link="base_link"/>
+    <child link="prop_bl"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
