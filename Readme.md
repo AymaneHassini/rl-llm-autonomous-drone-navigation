@@ -83,7 +83,7 @@ python drone-final.py
 ## Training the RL Agent (Optional)
 If you want to retrain the reflex policy from scratch:
 ```bash
-python train_rl.py
+python train-ppo.py
 ```
 - **Algorithm:** PPO (Stable Baselines3).
 - **Training Steps:** ~600,000.
